@@ -1,0 +1,35 @@
+<div *ngIf="playercard.playerId != 0">
+  <div class="w3-container">
+    <div class="card">
+        <!-- <div class="card-body" [ngStyle]="{'background-color': playercard.isCaptain? 'yellow' : 'white'}"> -->
+            <div class="card-body" [ngStyle]="this.playercard.isCaptain === this.playercard.cardPosition && {'background-color':'yellow'} || this.playercard.isSixthMan === this.playercard.cardPosition && {'background-color':'blue'} || this.playercard.isEmergency === this.playercard.cardPosition && {'background-color':'gray'}">
+            
+          <p><strong>{{playercard.cardPositionText}}</strong></p>
+          <p><img class="center" [attr.alt]="playercard.team" src="assets/images/{{playercard.team}}.jpg">
+            <strong>{{playercard.firstName}} {{playercard.surname}}</strong> - {{playercard.playerPosition}}<span [hidden]="playercard.playerPositionTwo === 0">, {{playercard.playerPositionTwo}}</span><span [hidden]="playercard.playerPositionThree === 0">, {{playercard.playerPositionThree}}</span><br>
+            ${{playercard.price}}<br><strong>Last Score:</strong> {{lastScore}}<br><strong>Average Score:</strong> {{playercard.averageScore}}</p>
+          <ul class="list-inline playerbuttons animate text-center">
+              <li *ngIf="currentState === 0" class="list-inline-item"><button class="btn btn-primary" (click)="tradePlayer(playercard)">T</button></li>
+              <li *ngIf="currentState === 0" class="list-inline-item"><button class="btn btn-primary" (click)="subPlayer(playercard)">S</button></li>
+              <li *ngIf="playercard.cardPosition < 6 && currentState === 0" class="list-inline-item"><button class="btn btn-primary" (click)="setCaptain(playercard.cardPosition)">C</button></li>
+              <li *ngIf="playercard.cardPosition > 5 && playercard.cardPosition < 11 && currentState === 0" class="list-inline-item"><button class="btn btn-primary" (click)="setSixthMan(playercard.cardPosition)">6</button></li>
+              <li *ngIf="playercard.cardPosition > 10 && currentState === 0" class="list-inline-item"><button class="btn btn-primary" (click)="setEmergency(playercard.cardPosition)">E</button></li>
+              <li class="list-inline-item"><button class="btn btn-primary" (click)="viewPlayer(playercard.playerId)"><i class="fa fa-info"></i></button></li>
+          </ul>
+        </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="playercard.playerId == 0">
+  <div class="w3-container">
+    <div class="card">
+        <div class="card-body">
+        <p>{{playercard.cardPositionText}}</p>
+        <p>{{playercard.cardPosition}}</p>
+        <button class="w3-button w3-block w3-dark-grey" [routerLink]="['/selectplayer/', playercard.cardPosition]" >
+          <p></p>+ Select Player
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="card" *ngIf="playercard.playerId != 0">
+    <!-- <div class="card"> -->
+      <div class="card-body" [ngStyle]="this.playercard.isCaptain === this.playercard.cardPosition && {'background-color':'yellow'} || this.playercard.isSixthMan === this.playercard.cardPosition && {'background-color':'blue'} || this.playercard.isEmergency === this.playercard.cardPosition && {'background-color':'gray'}">
+          <p><strong>{{playercard.cardPositionText}}</strong></p>
+          <p><img class="center" [attr.alt]="playercard.team" src="assets/images/{{playercard.team}}.jpg">
+            <strong>{{playercard.firstName}} {{playercard.surname}}</strong> - {{playercard.playerPosition}}<span [hidden]="playercard.playerPositionTwo === 0">, {{playercard.playerPositionTwo}}</span><span [hidden]="playercard.playerPositionThree === 0">, {{playercard.playerPositionThree}}</span><br>
+            ${{playercard.price}}<br><strong>Last Score:</strong> {{lastScore}}<br><strong>Average Score:</strong> {{playercard.averageScore}}</p>
+      </div>
+    <!-- </div> -->
+  </div>
+  <div class="card" *ngIf="playercard.playerId == 0">
+    <!-- <div class="w3-container"> -->
+      <!-- <div class="card"> -->
+        <div class="card-body">
+          <p>{{ playercard.cardPositionText }}</p>
+          <p><strong>Player Not Yet Selected</strong></p>
+        </div>
+      <!-- </div> -->
+    <!-- </div> -->
+  </div>

@@ -1,0 +1,553 @@
+2019-02-20T16:37:37.0430788+10:00 0HLKMVNJJ9P89:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/register   (ca22a1cb)
+2019-02-20T16:37:37.0613178+10:00 0HLKMVNJJ9P89:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:37:37.0777503+10:00 0HLKMVNJJ9P89:00000001 [INF] Request finished in 42.6282ms 204  (791a596a)
+2019-02-20T16:37:37.0886598+10:00 0HLKMVNJJ9P89:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/auth/register application/json 125 (ca22a1cb)
+2019-02-20T16:37:37.0887652+10:00 0HLKMVNJJ9P89:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:37:37.2886118+10:00 0HLKMVNJJ9P89:00000002 [INF] Route matched with "{action = \"Register\", controller = \"Auth\"}". Executing action "BasketballSupercoach.API.Controllers.AuthController.Register (BasketballSupercoach.API)" (a44c0341)
+2019-02-20T16:37:37.5728887+10:00 0HLKMVNJJ9P89:00000002 [INF] Executing action method "BasketballSupercoach.API.Controllers.AuthController.Register (BasketballSupercoach.API)" with arguments (["BasketballSupercoach.API.Dtos.UserForRegisterDto"]) - Validation state: Valid (4e3479ed)
+2019-02-20T16:37:37.7804240+10:00 0HLKMVNJJ9P89:00000002 [INF] Entity Framework Core "2.2.1-servicing-10028" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-20T16:37:38.0006638+10:00 0HLKMVNJJ9P89:00000002 [INF] Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-20T16:37:38.0584558+10:00 0HLKMVNJJ9P89:00000002 [INF] Executed DbCommand ("35"ms) [Parameters=["@__username_0='?' (Size = 6)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM \"Users\" AS \"x\"
+        WHERE \"x\".\"Username\" = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-02-20T16:37:38.1375833+10:00 0HLKMVNJJ9P89:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-20T16:37:38.1391876+10:00 0HLKMVNJJ9P89:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__teamname_0='?' (Size = 6)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM \"Users\" AS \"x\"
+        WHERE \"x\".\"Teamname\" = @__teamname_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-02-20T16:37:38.3142750+10:00 0HLKMVNJJ9P89:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-20T16:37:38.4356747+10:00 0HLKMVNJJ9P89:00000002 [INF] Executed DbCommand ("41"ms) [Parameters=["@p0='?', @p1='?' (Size = 6), @p2='?' (Size = 6), @p3='?' (Size = 64), @p4='?' (Size = 128), @p5='?', @p6='?', @p7='?' (Size = 6), @p8='?' (Size = 6)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"Users\" (\"Active\", \"Email\", \"Name\", \"PasswordHash\", \"PasswordSalt\", \"SalarySet\", \"TeamSelected\", \"Teamname\", \"Username\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT \"Id\"
+FROM \"Users\"
+WHERE changes() = 1 AND \"Id\" = last_insert_rowid();" (0723d8ff)
+2019-02-20T16:37:38.6272626+10:00 0HLKMVNJJ9P89:00000002 [INF] Executed action method "BasketballSupercoach.API.Controllers.AuthController.Register (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.StatusCodeResult" in 1050.2549ms. (50a9e262)
+2019-02-20T16:37:38.6696895+10:00 0HLKMVNJJ9P89:00000002 [INF] Executing HttpStatusCodeResult, setting HTTP status code 201 (e28ccfae)
+2019-02-20T16:37:38.6745600+10:00 0HLKMVNJJ9P89:00000002 [INF] Executed action "BasketballSupercoach.API.Controllers.AuthController.Register (BasketballSupercoach.API)" in 1381.363ms (afa2e885)
+2019-02-20T16:37:38.6798956+10:00 0HLKMVNJJ9P89:00000002 [INF] Request finished in 1591.2412ms 201  (791a596a)
+2019-02-20T16:37:38.6863802+10:00 0HLKMVNJJ9P89:00000003 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login   (ca22a1cb)
+2019-02-20T16:37:38.6866514+10:00 0HLKMVNJJ9P89:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:37:38.6871393+10:00 0HLKMVNJJ9P89:00000003 [INF] Request finished in 0.7338ms 204  (791a596a)
+2019-02-20T16:37:38.6969380+10:00 0HLKMVNJJ9P89:00000004 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login application/json 125 (ca22a1cb)
+2019-02-20T16:37:38.6971342+10:00 0HLKMVNJJ9P89:00000004 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:37:38.7036370+10:00 0HLKMVNJJ9P89:00000004 [INF] Route matched with "{action = \"Login\", controller = \"Auth\"}". Executing action "BasketballSupercoach.API.Controllers.AuthController.Login (BasketballSupercoach.API)" (a44c0341)
+2019-02-20T16:37:38.7246937+10:00 0HLKMVNJJ9P89:00000004 [INF] Executing action method "BasketballSupercoach.API.Controllers.AuthController.Login (BasketballSupercoach.API)" with arguments (["BasketballSupercoach.API.Dtos.UserForLoginDto"]) - Validation state: Valid (4e3479ed)
+2019-02-20T16:37:38.7306822+10:00 0HLKMVNJJ9P89:00000004 [INF] Entity Framework Core "2.2.1-servicing-10028" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-20T16:37:38.9021679+10:00 0HLKMVNJJ9P89:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-20T16:37:38.9031339+10:00 0HLKMVNJJ9P89:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__username_0='?' (Size = 6)"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"Id\", \"x\".\"Active\", \"x\".\"Email\", \"x\".\"Name\", \"x\".\"PasswordHash\", \"x\".\"PasswordSalt\", \"x\".\"SalarySet\", \"x\".\"TeamSelected\", \"x\".\"Teamname\", \"x\".\"Username\"
+FROM \"Users\" AS \"x\"
+WHERE \"x\".\"Username\" = @__username_0
+LIMIT 1" (0723d8ff)
+2019-02-20T16:37:39.1975466+10:00 0HLKMVNJJ9P89:00000004 [INF] Executed action method "BasketballSupercoach.API.Controllers.AuthController.Login (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 472.6683ms. (50a9e262)
+2019-02-20T16:37:39.2029156+10:00 0HLKMVNJJ9P89:00000004 [INF] Executing ObjectResult, writing value of type '"<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'. (8a1b66c8)
+2019-02-20T16:37:39.2496852+10:00 0HLKMVNJJ9P89:00000004 [INF] Executed action "BasketballSupercoach.API.Controllers.AuthController.Login (BasketballSupercoach.API)" in 545.4651ms (afa2e885)
+2019-02-20T16:37:39.2552521+10:00 0HLKMVNJJ9P89:00000004 [INF] Request finished in 559.9353ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-20T16:37:39.2699750+10:00 0HLKMVNJJ9P89:00000005 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users/10   (ca22a1cb)
+2019-02-20T16:37:39.2700405+10:00 0HLKMVNJJ9P89:00000005 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:37:39.2701281+10:00 0HLKMVNJJ9P89:00000005 [INF] Request finished in 0.2194ms 204  (791a596a)
+2019-02-20T16:37:39.2873498+10:00 0HLKMVNJJ9P89:00000006 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/users/10   (ca22a1cb)
+2019-02-20T16:37:39.2874391+10:00 0HLKMVNJJ9P89:00000006 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:37:39.3691084+10:00 0HLKMVNJJ9P89:00000006 [INF] Successfully validated the token. (60169667)
+2019-02-20T16:37:39.4016021+10:00 0HLKMVNJJ9P89:00000006 [INF] Route matched with "{action = \"GetUser\", controller = \"Users\"}". Executing action "BasketballSupercoach.API.Controllers.UsersController.GetUser (BasketballSupercoach.API)" (a44c0341)
+2019-02-20T16:37:39.4183709+10:00 0HLKMVNJJ9P89:00000006 [INF] Executing action method "BasketballSupercoach.API.Controllers.UsersController.GetUser (BasketballSupercoach.API)" with arguments (["10"]) - Validation state: Valid (4e3479ed)
+2019-02-20T16:37:39.4259980+10:00 0HLKMVNJJ9P89:00000006 [INF] Entity Framework Core "2.2.1-servicing-10028" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-20T16:37:39.6246409+10:00 0HLKMVNJJ9P89:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-20T16:37:39.6263823+10:00 0HLKMVNJJ9P89:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"p\".\"Id\", \"p\".\"Active\", \"p\".\"Email\", \"p\".\"Name\", \"p\".\"PasswordHash\", \"p\".\"PasswordSalt\", \"p\".\"SalarySet\", \"p\".\"TeamSelected\", \"p\".\"Teamname\", \"p\".\"Username\"
+FROM \"Users\" AS \"p\"
+WHERE \"p\".\"Id\" = @__id_0
+ORDER BY \"p\".\"Id\"
+LIMIT 1" (0723d8ff)
+2019-02-20T16:37:39.6620439+10:00 0HLKMVNJJ9P89:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"p.Photos\".\"Id\", \"p.Photos\".\"DateAdded\", \"p.Photos\".\"Description\", \"p.Photos\".\"Url\", \"p.Photos\".\"UserID\"
+FROM \"Photos\" AS \"p.Photos\"
+INNER JOIN (
+    SELECT \"p0\".\"Id\"
+    FROM \"Users\" AS \"p0\"
+    WHERE \"p0\".\"Id\" = @__id_0
+    ORDER BY \"p0\".\"Id\"
+    LIMIT 1
+) AS \"t\" ON \"p.Photos\".\"UserID\" = \"t\".\"Id\"
+ORDER BY \"t\".\"Id\"" (0723d8ff)
+2019-02-20T16:37:39.6684500+10:00 0HLKMVNJJ9P89:00000006 [INF] Executed action method "BasketballSupercoach.API.Controllers.UsersController.GetUser (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 249.841ms. (50a9e262)
+2019-02-20T16:37:39.6690141+10:00 0HLKMVNJJ9P89:00000006 [INF] Executing ObjectResult, writing value of type '"BasketballSupercoach.API.Models.User"'. (8a1b66c8)
+2019-02-20T16:37:39.7468775+10:00 0HLKMVNJJ9P89:00000006 [INF] Executed action "BasketballSupercoach.API.Controllers.UsersController.GetUser (BasketballSupercoach.API)" in 345.159ms (afa2e885)
+2019-02-20T16:37:39.7470260+10:00 0HLKMVNJJ9P89:00000006 [INF] Request finished in 459.7136ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-20T16:37:39.7770299+10:00 0HLKMVNJJ9P89:00000007 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/teamsalary/createsalary   (ca22a1cb)
+2019-02-20T16:37:39.7772616+10:00 0HLKMVNJJ9P89:00000007 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:37:39.7777638+10:00 0HLKMVNJJ9P89:00000007 [INF] Request finished in 7.1881ms 204  (791a596a)
+2019-02-20T16:37:39.7779303+10:00 0HLKMVNJJ9P8A:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/teamdetail/10   (ca22a1cb)
+2019-02-20T16:37:39.7779832+10:00 0HLKMVNJJ9P8A:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:37:39.7780985+10:00 0HLKMVNJJ9P8A:00000001 [INF] Request finished in 0.1819ms 204  (791a596a)
+2019-02-20T16:37:39.7784471+10:00 0HLKMVNJJ9P8B:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/teamrank/10   (ca22a1cb)
+2019-02-20T16:37:39.7784956+10:00 0HLKMVNJJ9P8B:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:37:39.7785793+10:00 0HLKMVNJJ9P8B:00000001 [INF] Request finished in 0.1334ms 204  (791a596a)
+2019-02-20T16:37:39.7786689+10:00 0HLKMVNJJ9P8C:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/teamrank/score/10   (ca22a1cb)
+2019-02-20T16:37:39.7790060+10:00 0HLKMVNJJ9P8C:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:37:39.7790933+10:00 0HLKMVNJJ9P8C:00000001 [INF] Request finished in 0.435ms 204  (791a596a)
+2019-02-20T16:37:39.7833645+10:00 0HLKMVNJJ9P89:00000008 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/teamrank/totalrank/10   (ca22a1cb)
+2019-02-20T16:37:39.7834312+10:00 0HLKMVNJJ9P89:00000008 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:37:39.7835512+10:00 0HLKMVNJJ9P89:00000008 [INF] Request finished in 0.2321ms 204  (791a596a)
+2019-02-20T16:37:39.7836519+10:00 0HLKMVNJJ9P8C:00000002 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/teamrank/totalscore/10   (ca22a1cb)
+2019-02-20T16:37:39.7836847+10:00 0HLKMVNJJ9P8C:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:37:39.7837928+10:00 0HLKMVNJJ9P8C:00000002 [INF] Request finished in 0.1136ms 204  (791a596a)
+2019-02-20T16:37:39.7838410+10:00 0HLKMVNJJ9P8B:00000002 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/teamrank/getround/   (ca22a1cb)
+2019-02-20T16:37:39.7838730+10:00 0HLKMVNJJ9P8A:00000002 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/runscores/getstatus/   (ca22a1cb)
+2019-02-20T16:37:39.7838852+10:00 0HLKMVNJJ9P8B:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:37:39.7839049+10:00 0HLKMVNJJ9P8A:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:37:39.7839645+10:00 0HLKMVNJJ9P8B:00000002 [INF] Request finished in 0.1429ms 204  (791a596a)
+2019-02-20T16:37:39.7839693+10:00 0HLKMVNJJ9P8A:00000002 [INF] Request finished in 0.1065ms 204  (791a596a)
+2019-02-20T16:37:39.8928114+10:00 0HLKMVNJJ9P8E:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/teamrank/totalrank/10   (ca22a1cb)
+2019-02-20T16:37:39.8928114+10:00 0HLKMVNJJ9P8A:00000003 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/teamsalary/createsalary application/json 41 (ca22a1cb)
+2019-02-20T16:37:39.8928477+10:00 0HLKMVNJJ9P8B:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/teamdetail/10   (ca22a1cb)
+2019-02-20T16:37:39.8928738+10:00 0HLKMVNJJ9P8A:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:37:39.8928714+10:00 0HLKMVNJJ9P8E:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:37:39.8928900+10:00 0HLKMVNJJ9P8B:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:37:39.8933360+10:00 0HLKMVNJJ9P8E:00000001 [INF] Successfully validated the token. (60169667)
+2019-02-20T16:37:39.8933368+10:00 0HLKMVNJJ9P8B:00000003 [INF] Successfully validated the token. (60169667)
+2019-02-20T16:37:39.8933360+10:00 0HLKMVNJJ9P8A:00000003 [INF] Successfully validated the token. (60169667)
+2019-02-20T16:37:39.8979827+10:00 0HLKMVNJJ9P8E:00000001 [INF] Route matched with "{action = \"GetTotalRank\", controller = \"TeamRank\"}". Executing action "BasketballSupercoach.API.Controllers.TeamRankController.GetTotalRank (BasketballSupercoach.API)" (a44c0341)
+2019-02-20T16:37:39.8979827+10:00 0HLKMVNJJ9P8B:00000003 [INF] Route matched with "{action = \"GetPlayerCardsForUser\", controller = \"TeamDetail\"}". Executing action "BasketballSupercoach.API.Controllers.TeamDetailController.GetPlayerCardsForUser (BasketballSupercoach.API)" (a44c0341)
+2019-02-20T16:37:39.8981465+10:00 0HLKMVNJJ9P8A:00000003 [INF] Route matched with "{action = \"CreateTeamSalary\", controller = \"TeamSalary\"}". Executing action "BasketballSupercoach.API.Controllers.TeamSalaryController.CreateTeamSalary (BasketballSupercoach.API)" (a44c0341)
+2019-02-20T16:37:39.8999146+10:00 0HLKMVNJJ9P89:00000009 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/teamrank/10   (ca22a1cb)
+2019-02-20T16:37:39.8999793+10:00 0HLKMVNJJ9P89:00000009 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:37:39.9002427+10:00 0HLKMVNJJ9P89:00000009 [INF] Successfully validated the token. (60169667)
+2019-02-20T16:37:39.9065627+10:00 0HLKMVNJJ9P8E:00000001 [INF] Authorization was successful. (0d575a54)
+2019-02-20T16:37:39.9074240+10:00 0HLKMVNJJ9P8E:00000001 [INF] Executing action method "BasketballSupercoach.API.Controllers.TeamRankController.GetTotalRank (BasketballSupercoach.API)" with arguments (["10"]) - Validation state: Valid (4e3479ed)
+2019-02-20T16:37:39.9079807+10:00 0HLKMVNJJ9P8A:00000003 [INF] Executing action method "BasketballSupercoach.API.Controllers.TeamSalaryController.CreateTeamSalary (BasketballSupercoach.API)" with arguments (["BasketballSupercoach.API.Dtos.TeamSalaryCreationDto"]) - Validation state: Valid (4e3479ed)
+2019-02-20T16:37:39.9083767+10:00 0HLKMVNJJ9P89:00000009 [INF] Route matched with "{action = \"GetRoundRank\", controller = \"TeamRank\"}". Executing action "BasketballSupercoach.API.Controllers.TeamRankController.GetRoundRank (BasketballSupercoach.API)" (a44c0341)
+2019-02-20T16:37:39.9086905+10:00 0HLKMVNJJ9P89:00000009 [INF] Authorization was successful. (0d575a54)
+2019-02-20T16:37:39.9089680+10:00 0HLKMVNJJ9P89:00000009 [INF] Executing action method "BasketballSupercoach.API.Controllers.TeamRankController.GetRoundRank (BasketballSupercoach.API)" with arguments (["10"]) - Validation state: Valid (4e3479ed)
+2019-02-20T16:37:39.9108040+10:00 0HLKMVNJJ9P8E:00000001 [INF] Entity Framework Core "2.2.1-servicing-10028" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-20T16:37:39.9110475+10:00 0HLKMVNJJ9P8A:00000003 [INF] Entity Framework Core "2.2.1-servicing-10028" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-20T16:37:39.9123365+10:00 0HLKMVNJJ9P89:00000009 [INF] Entity Framework Core "2.2.1-servicing-10028" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-20T16:37:39.9146356+10:00 0HLKMVNJJ9P8B:00000003 [INF] Authorization was successful. (0d575a54)
+2019-02-20T16:37:39.9155940+10:00 0HLKMVNJJ9P8B:00000003 [INF] Executing action method "BasketballSupercoach.API.Controllers.TeamDetailController.GetPlayerCardsForUser (BasketballSupercoach.API)" with arguments (["10"]) - Validation state: Valid (4e3479ed)
+2019-02-20T16:37:39.9359856+10:00 0HLKMVNJJ9P8A:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-20T16:37:39.9394788+10:00 0HLKMVNJJ9P8E:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-20T16:37:39.9406638+10:00 0HLKMVNJJ9P8E:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"Id\", \"t\".\"RoundId\", \"t\".\"Total\", \"t\".\"UserId\"
+FROM \"TeamScores\" AS \"t\"" (0723d8ff)
+2019-02-20T16:37:39.9452419+10:00 0HLKMVNJJ9P8B:00000003 [INF] Entity Framework Core "2.2.1-servicing-10028" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-20T16:37:39.9661352+10:00 0HLKMVNJJ9P8A:00000003 [INF] Executed DbCommand ("24"ms) [Parameters=["@p0='?', @p1='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"TeamSalary\" (\"AvailableSalary\", \"UserId\")
+VALUES (@p0, @p1);
+SELECT \"Id\"
+FROM \"TeamSalary\"
+WHERE changes() = 1 AND \"Id\" = last_insert_rowid();" (0723d8ff)
+2019-02-20T16:37:39.9809484+10:00 0HLKMVNJJ9P89:00000009 [WRN] Query: '"(from Round <generated>_2 in DbSet<Round> select [<generated>_2]).FirstOrDefault()"' uses First/FirstOrDefault/Last/LastOrDefault operation without OrderBy and filter which may lead to unpredictable results. (6af4db4b)
+2019-02-20T16:37:40.0172218+10:00 0HLKMVNJJ9P89:00000009 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-20T16:37:40.0267276+10:00 0HLKMVNJJ9P8B:00000003 [INF] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-20T16:37:40.0345217+10:00 0HLKMVNJJ9P8E:00000001 [INF] Executed action method "BasketballSupercoach.API.Controllers.TeamRankController.GetTotalRank (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 126.9839ms. (50a9e262)
+2019-02-20T16:37:40.0346915+10:00 0HLKMVNJJ9P8E:00000001 [INF] Executing ObjectResult, writing value of type '"System.Int32"'. (8a1b66c8)
+2019-02-20T16:37:40.0349271+10:00 0HLKMVNJJ9P8E:00000001 [INF] Executed action "BasketballSupercoach.API.Controllers.TeamRankController.GetTotalRank (BasketballSupercoach.API)" in 136.8705ms (afa2e885)
+2019-02-20T16:37:40.0350310+10:00 0HLKMVNJJ9P8E:00000001 [INF] Request finished in 142.2566ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-20T16:37:40.0351581+10:00 0HLKMVNJJ9P8D:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/teamrank/totalscore/10   (ca22a1cb)
+2019-02-20T16:37:40.0352110+10:00 0HLKMVNJJ9P8D:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:37:40.0359496+10:00 0HLKMVNJJ9P8D:00000001 [INF] Successfully validated the token. (60169667)
+2019-02-20T16:37:40.0487329+10:00 0HLKMVNJJ9P8D:00000001 [INF] Route matched with "{action = \"GetTotalScore\", controller = \"TeamRank\"}". Executing action "BasketballSupercoach.API.Controllers.TeamRankController.GetTotalScore (BasketballSupercoach.API)" (a44c0341)
+2019-02-20T16:37:40.0488960+10:00 0HLKMVNJJ9P8D:00000001 [INF] Authorization was successful. (0d575a54)
+2019-02-20T16:37:40.0492224+10:00 0HLKMVNJJ9P8D:00000001 [INF] Executing action method "BasketballSupercoach.API.Controllers.TeamRankController.GetTotalScore (BasketballSupercoach.API)" with arguments (["10"]) - Validation state: Valid (4e3479ed)
+2019-02-20T16:37:40.0530915+10:00 0HLKMVNJJ9P8D:00000001 [INF] Entity Framework Core "2.2.1-servicing-10028" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-20T16:37:40.0656791+10:00 0HLKMVNJJ9P8D:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-20T16:37:40.3687669+10:00 0HLKMVNJJ9P8A:00000003 [INF] Executed action method "BasketballSupercoach.API.Controllers.TeamSalaryController.CreateTeamSalary (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.StatusCodeResult" in 460.6867ms. (50a9e262)
+2019-02-20T16:37:40.3689406+10:00 0HLKMVNJJ9P8A:00000003 [INF] Executing HttpStatusCodeResult, setting HTTP status code 201 (e28ccfae)
+2019-02-20T16:37:40.3690507+10:00 0HLKMVNJJ9P8A:00000003 [INF] Executed action "BasketballSupercoach.API.Controllers.TeamSalaryController.CreateTeamSalary (BasketballSupercoach.API)" in 470.8458ms (afa2e885)
+2019-02-20T16:37:40.3691798+10:00 0HLKMVNJJ9P8A:00000003 [INF] Request finished in 476.4043ms 201  (791a596a)
+2019-02-20T16:37:40.3722977+10:00 0HLKMVNJJ9P8A:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/teamrank/getround/   (ca22a1cb)
+2019-02-20T16:37:40.3723715+10:00 0HLKMVNJJ9P8A:00000004 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:37:40.3726585+10:00 0HLKMVNJJ9P8A:00000004 [INF] Successfully validated the token. (60169667)
+2019-02-20T16:37:40.3768176+10:00 0HLKMVNJJ9P8A:00000004 [INF] Route matched with "{action = \"GetCurrentRound\", controller = \"TeamRank\"}". Executing action "BasketballSupercoach.API.Controllers.TeamRankController.GetCurrentRound (BasketballSupercoach.API)" (a44c0341)
+2019-02-20T16:37:40.3769325+10:00 0HLKMVNJJ9P8A:00000004 [INF] Authorization was successful. (0d575a54)
+2019-02-20T16:37:40.3810794+10:00 0HLKMVNJJ9P8A:00000004 [INF] Executing action method "BasketballSupercoach.API.Controllers.TeamRankController.GetCurrentRound (BasketballSupercoach.API)" - Validation state: Valid (dad538d7)
+2019-02-20T16:37:40.3837428+10:00 0HLKMVNJJ9P8A:00000004 [INF] Entity Framework Core "2.2.1-servicing-10028" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-20T16:37:40.3852354+10:00 0HLKMVNJJ9P8A:00000004 [WRN] Query: '"(from Round <generated>_2 in DbSet<Round> select [<generated>_2]).FirstOrDefault()"' uses First/FirstOrDefault/Last/LastOrDefault operation without OrderBy and filter which may lead to unpredictable results. (6af4db4b)
+2019-02-20T16:37:40.3860048+10:00 0HLKMVNJJ9P8C:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/teamrank/score/10   (ca22a1cb)
+2019-02-20T16:37:40.3860739+10:00 0HLKMVNJJ9P8C:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:37:40.3863814+10:00 0HLKMVNJJ9P8C:00000003 [INF] Successfully validated the token. (60169667)
+2019-02-20T16:37:40.3891652+10:00 0HLKMVNJJ9P8D:00000001 [INF] Executed DbCommand ("323"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM TeamScores where UserId = @p0" (0723d8ff)
+2019-02-20T16:37:40.3954284+10:00 0HLKMVNJJ9P8A:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-20T16:37:40.3962634+10:00 0HLKMVNJJ9P8A:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"r\".\"Id\", \"r\".\"EndDate\", \"r\".\"RoundNumber\", \"r\".\"StartDate\"
+FROM (
+    SELECT * FROM Rounds where CAST(startDate AS INT) <= @p0 and CAST(endDate AS INT) >= @p0
+) AS \"r\"
+LIMIT 1" (0723d8ff)
+2019-02-20T16:37:40.3972956+10:00 0HLKMVNJJ9P8D:00000001 [INF] Executed action method "BasketballSupercoach.API.Controllers.TeamRankController.GetTotalScore (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 347.9882ms. (50a9e262)
+2019-02-20T16:37:40.3974144+10:00 0HLKMVNJJ9P8D:00000001 [INF] Executing ObjectResult, writing value of type '"System.Decimal"'. (8a1b66c8)
+2019-02-20T16:37:40.3997735+10:00 0HLKMVNJJ9P8D:00000001 [INF] Executed action "BasketballSupercoach.API.Controllers.TeamRankController.GetTotalScore (BasketballSupercoach.API)" in 350.9359ms (afa2e885)
+2019-02-20T16:37:40.3998860+10:00 0HLKMVNJJ9P8D:00000001 [INF] Request finished in 364.7295ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-20T16:37:40.4002365+10:00 0HLKMVNJJ9P8E:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/runscores/getstatus/   (ca22a1cb)
+2019-02-20T16:37:40.4002879+10:00 0HLKMVNJJ9P8E:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:37:40.4006297+10:00 0HLKMVNJJ9P8E:00000002 [INF] Successfully validated the token. (60169667)
+2019-02-20T16:37:40.4055839+10:00 0HLKMVNJJ9P8D:00000002 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users/10   (ca22a1cb)
+2019-02-20T16:37:40.4056474+10:00 0HLKMVNJJ9P8D:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:37:40.4056486+10:00 0HLKMVNJJ9P8E:00000002 [INF] Route matched with "{action = \"GetCompetitionStatus\", controller = \"RunScores\"}". Executing action "BasketballSupercoach.API.Controllers.RunScoresController.GetCompetitionStatus (BasketballSupercoach.API)" (a44c0341)
+2019-02-20T16:37:40.4057343+10:00 0HLKMVNJJ9P8D:00000002 [INF] Request finished in 0.1989ms 204  (791a596a)
+2019-02-20T16:37:40.4057781+10:00 0HLKMVNJJ9P8E:00000002 [INF] Authorization was successful. (0d575a54)
+2019-02-20T16:37:40.4062393+10:00 0HLKMVNJJ9P8E:00000002 [INF] Executing action method "BasketballSupercoach.API.Controllers.RunScoresController.GetCompetitionStatus (BasketballSupercoach.API)" - Validation state: Valid (dad538d7)
+2019-02-20T16:37:40.4098627+10:00 0HLKMVNJJ9P8E:00000002 [INF] Entity Framework Core "2.2.1-servicing-10028" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-20T16:37:40.4115546+10:00 0HLKMVNJJ9P8C:00000003 [INF] Route matched with "{action = \"GetRoundScore\", controller = \"TeamRank\"}". Executing action "BasketballSupercoach.API.Controllers.TeamRankController.GetRoundScore (BasketballSupercoach.API)" (a44c0341)
+2019-02-20T16:37:40.4116553+10:00 0HLKMVNJJ9P8C:00000003 [INF] Authorization was successful. (0d575a54)
+2019-02-20T16:37:40.4119632+10:00 0HLKMVNJJ9P8C:00000003 [INF] Executing action method "BasketballSupercoach.API.Controllers.TeamRankController.GetRoundScore (BasketballSupercoach.API)" with arguments (["10"]) - Validation state: Valid (4e3479ed)
+2019-02-20T16:37:40.4128703+10:00 0HLKMVNJJ9P8A:00000004 [INF] Executed action method "BasketballSupercoach.API.Controllers.TeamRankController.GetCurrentRound (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 31.6922ms. (50a9e262)
+2019-02-20T16:37:40.4129643+10:00 0HLKMVNJJ9P8A:00000004 [INF] Executing ObjectResult, writing value of type '"System.Int32"'. (8a1b66c8)
+2019-02-20T16:37:40.4131609+10:00 0HLKMVNJJ9P8A:00000004 [INF] Executed action "BasketballSupercoach.API.Controllers.TeamRankController.GetCurrentRound (BasketballSupercoach.API)" in 36.2773ms (afa2e885)
+2019-02-20T16:37:40.4132864+10:00 0HLKMVNJJ9P8A:00000004 [INF] Request finished in 41.0669ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-20T16:37:40.4146842+10:00 0HLKMVNJJ9P8C:00000003 [INF] Entity Framework Core "2.2.1-servicing-10028" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-20T16:37:40.4181301+10:00 0HLKMVNJJ9P8C:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-20T16:37:40.4189824+10:00 0HLKMVNJJ9P8C:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"r\".\"Id\", \"r\".\"EndDate\", \"r\".\"RoundNumber\", \"r\".\"StartDate\"
+FROM (
+    SELECT * FROM Rounds where CAST(startDate AS INT) <= @p0 and CAST(endDate AS INT) >= @p0
+) AS \"r\"
+LIMIT 1" (0723d8ff)
+2019-02-20T16:37:40.4201343+10:00 0HLKMVNJJ9P8E:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-20T16:37:40.4204659+10:00 0HLKMVNJJ9P8C:00000003 [WRN] Query: '"(from TeamScore <generated>_2 in DbSet<TeamScore> select [<generated>_2]).FirstOrDefault()"' uses First/FirstOrDefault/Last/LastOrDefault operation without OrderBy and filter which may lead to unpredictable results. (6af4db4b)
+2019-02-20T16:37:40.4287270+10:00 0HLKMVNJJ9P8E:00000002 [INF] Executed DbCommand ("8"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"l\".\"Id\", \"l\".\"Locked\"
+FROM \"Lockouts\" AS \"l\"" (0723d8ff)
+2019-02-20T16:37:40.4302006+10:00 0HLKMVNJJ9P8D:00000003 [INF] Request starting HTTP/1.1 PUT http://localhost:5000/api/users/10 application/json 432 (ca22a1cb)
+2019-02-20T16:37:40.4302847+10:00 0HLKMVNJJ9P8D:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:37:40.4305657+10:00 0HLKMVNJJ9P8D:00000003 [INF] Successfully validated the token. (60169667)
+2019-02-20T16:37:40.4350525+10:00 0HLKMVNJJ9P8D:00000003 [INF] Route matched with "{action = \"UpdateSalarySet\", controller = \"Users\"}". Executing action "BasketballSupercoach.API.Controllers.UsersController.UpdateSalarySet (BasketballSupercoach.API)" (a44c0341)
+2019-02-20T16:37:40.4352132+10:00 0HLKMVNJJ9P8E:00000002 [INF] Executed action method "BasketballSupercoach.API.Controllers.RunScoresController.GetCompetitionStatus (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 28.897ms. (50a9e262)
+2019-02-20T16:37:40.4353131+10:00 0HLKMVNJJ9P8E:00000002 [INF] Executing ObjectResult, writing value of type '"System.Int32"'. (8a1b66c8)
+2019-02-20T16:37:40.4354279+10:00 0HLKMVNJJ9P8E:00000002 [INF] Executed action "BasketballSupercoach.API.Controllers.RunScoresController.GetCompetitionStatus (BasketballSupercoach.API)" in 29.7299ms (afa2e885)
+2019-02-20T16:37:40.4355132+10:00 0HLKMVNJJ9P8E:00000002 [INF] Request finished in 35.3106ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-20T16:37:40.4371689+10:00 0HLKMVNJJ9P8C:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-20T16:37:40.4382347+10:00 0HLKMVNJJ9P8C:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?', @p1='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"Id\", \"t\".\"RoundId\", \"t\".\"Total\", \"t\".\"UserId\"
+FROM (
+    SELECT * FROM TeamScores where RoundId = @p0 and UserId = @p1
+) AS \"t\"
+LIMIT 1" (0723d8ff)
+2019-02-20T16:37:40.6291298+10:00 0HLKMVNJJ9P8B:00000003 [INF] Executed DbCommand ("601"ms) [Parameters=["@__userId_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"Id\", \"x\".\"Active\", \"x\".\"Captain\", \"x\".\"Emergency\", \"x\".\"PlayerId\", \"x\".\"Position\", \"x\".\"SixthMan\", \"x\".\"UserId\"
+FROM \"TeamDetails\" AS \"x\"
+WHERE \"x\".\"UserId\" = @__userId_0" (0723d8ff)
+2019-02-20T16:37:40.6335432+10:00 0HLKMVNJJ9P89:00000009 [INF] Executed DbCommand ("615"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"r\".\"Id\", \"r\".\"EndDate\", \"r\".\"RoundNumber\", \"r\".\"StartDate\"
+FROM (
+    SELECT * FROM Rounds where CAST(startDate AS INT) <= @p0 and CAST(endDate AS INT) >= @p0
+) AS \"r\"
+LIMIT 1" (0723d8ff)
+2019-02-20T16:37:40.6364249+10:00 0HLKMVNJJ9P8B:00000003 [INF] Executed action method "BasketballSupercoach.API.Controllers.TeamDetailController.GetPlayerCardsForUser (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 720.6931ms. (50a9e262)
+2019-02-20T16:37:40.6365702+10:00 0HLKMVNJJ9P8B:00000003 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[BasketballSupercoach.API.Dtos.PlayerCardDto, BasketballSupercoach.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-02-20T16:37:40.6457858+10:00 0HLKMVNJJ9P89:00000009 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-20T16:37:40.6467589+10:00 0HLKMVNJJ9P89:00000009 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""select * from TeamScores where RoundId = @p0 order by Total desc" (0723d8ff)
+2019-02-20T16:37:40.6479862+10:00 0HLKMVNJJ9P89:00000009 [INF] Executed action method "BasketballSupercoach.API.Controllers.TeamRankController.GetRoundRank (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 738.9336ms. (50a9e262)
+2019-02-20T16:37:40.6481148+10:00 0HLKMVNJJ9P89:00000009 [INF] Executing ObjectResult, writing value of type '"System.Int32"'. (8a1b66c8)
+2019-02-20T16:37:40.6482795+10:00 0HLKMVNJJ9P89:00000009 [INF] Executed action "BasketballSupercoach.API.Controllers.TeamRankController.GetRoundRank (BasketballSupercoach.API)" in 739.8396ms (afa2e885)
+2019-02-20T16:37:40.6484145+10:00 0HLKMVNJJ9P89:00000009 [INF] Request finished in 749.9288ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-20T16:37:40.6522479+10:00 0HLKMVNJJ9P8C:00000003 [INF] Executed action "BasketballSupercoach.API.Controllers.TeamRankController.GetRoundScore (BasketballSupercoach.API)" in 240.6013ms (afa2e885)
+2019-02-20T16:37:40.6522479+10:00 0HLKMVNJJ9P8B:00000003 [INF] Executed action "BasketballSupercoach.API.Controllers.TeamDetailController.GetPlayerCardsForUser (BasketballSupercoach.API)" in 754.1685ms (afa2e885)
+2019-02-20T16:37:40.6523561+10:00 0HLKMVNJJ9P8B:00000003 [INF] Request finished in 759.523ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-20T16:37:40.6942513+10:00 0HLKMVNJJ9P8D:00000003 [INF] Executing action method "BasketballSupercoach.API.Controllers.UsersController.UpdateSalarySet (BasketballSupercoach.API)" with arguments (["BasketballSupercoach.API.Models.User"]) - Validation state: Valid (4e3479ed)
+2019-02-20T16:37:40.6997617+10:00 0HLKMVNJJ9P8D:00000003 [INF] Entity Framework Core "2.2.1-servicing-10028" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-20T16:37:40.7047696+10:00 0HLKMVNJJ9P8D:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-20T16:37:40.7673279+10:00 0HLKMVNJJ9P8C:00000003 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at BasketballSupercoach.API.Data.BasketballSupercoachRepository.GetRoundScore(Int32 id) in C:\Users\ashle\Documents\basketballsupercoach-master\BasketballSupercoach.API\Data\BasketballSupercoachRepository.cs:line 588
+   at BasketballSupercoach.API.Controllers.TeamRankController.GetRoundScore(Int32 id) in C:\Users\ashle\Documents\basketballsupercoach-master\BasketballSupercoach.API\Controllers\TeamRankController.cs:line 33
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-02-20T16:37:40.7896349+10:00 0HLKMVNJJ9P8D:00000003 [INF] Executed DbCommand ("83"ms) [Parameters=["@p9='?', @p0='?', @p1='?' (Size = 6), @p2='?' (Size = 6), @p3='?' (Size = 64), @p4='?' (Size = 128), @p5='?', @p6='?', @p7='?' (Size = 6), @p8='?' (Size = 6)"], CommandType='Text', CommandTimeout='30']"
+""UPDATE \"Users\" SET \"Active\" = @p0, \"Email\" = @p1, \"Name\" = @p2, \"PasswordHash\" = @p3, \"PasswordSalt\" = @p4, \"SalarySet\" = @p5, \"TeamSelected\" = @p6, \"Teamname\" = @p7, \"Username\" = @p8
+WHERE \"Id\" = @p9;
+SELECT changes();" (0723d8ff)
+2019-02-20T16:37:40.8260023+10:00 0HLKMVNJJ9P8C:00000003 [INF] Request finished in 438.3718ms 500 text/html; charset=utf-8 (791a596a)
+2019-02-20T16:37:40.9086715+10:00 0HLKMVNJJ9P8D:00000003 [INF] Executed action method "BasketballSupercoach.API.Controllers.UsersController.UpdateSalarySet (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.StatusCodeResult" in 214.2528ms. (50a9e262)
+2019-02-20T16:37:40.9087777+10:00 0HLKMVNJJ9P8D:00000003 [INF] Executing HttpStatusCodeResult, setting HTTP status code 201 (e28ccfae)
+2019-02-20T16:37:40.9088405+10:00 0HLKMVNJJ9P8D:00000003 [INF] Executed action "BasketballSupercoach.API.Controllers.UsersController.UpdateSalarySet (BasketballSupercoach.API)" in 473.7275ms (afa2e885)
+2019-02-20T16:37:40.9090074+10:00 0HLKMVNJJ9P8D:00000003 [INF] Request finished in 478.8135ms 201  (791a596a)
+2019-02-20T16:40:25.6728369+10:00 0HLKMVNJJ9P8F:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login   (ca22a1cb)
+2019-02-20T16:40:25.6729356+10:00 0HLKMVNJJ9P8F:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:40:25.6731179+10:00 0HLKMVNJJ9P8F:00000001 [INF] Request finished in 0.3912ms 204  (791a596a)
+2019-02-20T16:40:25.6754588+10:00 0HLKMVNJJ9P8F:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login application/json 42 (ca22a1cb)
+2019-02-20T16:40:25.6755283+10:00 0HLKMVNJJ9P8F:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:40:25.6759969+10:00 0HLKMVNJJ9P8F:00000002 [INF] Route matched with "{action = \"Login\", controller = \"Auth\"}". Executing action "BasketballSupercoach.API.Controllers.AuthController.Login (BasketballSupercoach.API)" (a44c0341)
+2019-02-20T16:40:25.6767008+10:00 0HLKMVNJJ9P8F:00000002 [INF] Executing action method "BasketballSupercoach.API.Controllers.AuthController.Login (BasketballSupercoach.API)" with arguments (["BasketballSupercoach.API.Dtos.UserForLoginDto"]) - Validation state: Valid (4e3479ed)
+2019-02-20T16:40:25.6780998+10:00 0HLKMVNJJ9P8F:00000002 [INF] Entity Framework Core "2.2.1-servicing-10028" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-20T16:40:25.6799461+10:00 0HLKMVNJJ9P8F:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-20T16:40:25.6809342+10:00 0HLKMVNJJ9P8F:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__username_0='?' (Size = 5)"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"Id\", \"x\".\"Active\", \"x\".\"Email\", \"x\".\"Name\", \"x\".\"PasswordHash\", \"x\".\"PasswordSalt\", \"x\".\"SalarySet\", \"x\".\"TeamSelected\", \"x\".\"Teamname\", \"x\".\"Username\"
+FROM \"Users\" AS \"x\"
+WHERE \"x\".\"Username\" = @__username_0
+LIMIT 1" (0723d8ff)
+2019-02-20T16:40:25.6817841+10:00 0HLKMVNJJ9P8F:00000002 [INF] Executed action method "BasketballSupercoach.API.Controllers.AuthController.Login (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 4.9277ms. (50a9e262)
+2019-02-20T16:40:25.6818954+10:00 0HLKMVNJJ9P8F:00000002 [INF] Executing ObjectResult, writing value of type '"<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'. (8a1b66c8)
+2019-02-20T16:40:25.6820481+10:00 0HLKMVNJJ9P8F:00000002 [INF] Executed action "BasketballSupercoach.API.Controllers.AuthController.Login (BasketballSupercoach.API)" in 5.9671ms (afa2e885)
+2019-02-20T16:40:25.6821366+10:00 0HLKMVNJJ9P8F:00000002 [INF] Request finished in 6.7436ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-20T16:40:25.6926715+10:00 0HLKMVNJJ9P8F:00000003 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users/9   (ca22a1cb)
+2019-02-20T16:40:25.6927386+10:00 0HLKMVNJJ9P8F:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:40:25.6928369+10:00 0HLKMVNJJ9P8F:00000003 [INF] Request finished in 0.2404ms 204  (791a596a)
+2019-02-20T16:40:25.7090050+10:00 0HLKMVNJJ9P8F:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/users/9   (ca22a1cb)
+2019-02-20T16:40:25.7101281+10:00 0HLKMVNJJ9P8F:00000004 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:40:25.7120331+10:00 0HLKMVNJJ9P8F:00000004 [INF] Successfully validated the token. (60169667)
+2019-02-20T16:40:25.7126036+10:00 0HLKMVNJJ9P8F:00000004 [INF] Route matched with "{action = \"GetUser\", controller = \"Users\"}". Executing action "BasketballSupercoach.API.Controllers.UsersController.GetUser (BasketballSupercoach.API)" (a44c0341)
+2019-02-20T16:40:25.7143283+10:00 0HLKMVNJJ9P8F:00000004 [INF] Executing action method "BasketballSupercoach.API.Controllers.UsersController.GetUser (BasketballSupercoach.API)" with arguments (["9"]) - Validation state: Valid (4e3479ed)
+2019-02-20T16:40:25.7168452+10:00 0HLKMVNJJ9P8F:00000004 [INF] Entity Framework Core "2.2.1-servicing-10028" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-20T16:40:25.7212657+10:00 0HLKMVNJJ9P8F:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-20T16:40:25.7227899+10:00 0HLKMVNJJ9P8F:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"p\".\"Id\", \"p\".\"Active\", \"p\".\"Email\", \"p\".\"Name\", \"p\".\"PasswordHash\", \"p\".\"PasswordSalt\", \"p\".\"SalarySet\", \"p\".\"TeamSelected\", \"p\".\"Teamname\", \"p\".\"Username\"
+FROM \"Users\" AS \"p\"
+WHERE \"p\".\"Id\" = @__id_0
+ORDER BY \"p\".\"Id\"
+LIMIT 1" (0723d8ff)
+2019-02-20T16:40:25.7298501+10:00 0HLKMVNJJ9P8F:00000004 [INF] Executed DbCommand ("3"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"p.Photos\".\"Id\", \"p.Photos\".\"DateAdded\", \"p.Photos\".\"Description\", \"p.Photos\".\"Url\", \"p.Photos\".\"UserID\"
+FROM \"Photos\" AS \"p.Photos\"
+INNER JOIN (
+    SELECT \"p0\".\"Id\"
+    FROM \"Users\" AS \"p0\"
+    WHERE \"p0\".\"Id\" = @__id_0
+    ORDER BY \"p0\".\"Id\"
+    LIMIT 1
+) AS \"t\" ON \"p.Photos\".\"UserID\" = \"t\".\"Id\"
+ORDER BY \"t\".\"Id\"" (0723d8ff)
+2019-02-20T16:40:25.7308863+10:00 0HLKMVNJJ9P8F:00000004 [INF] Executed action method "BasketballSupercoach.API.Controllers.UsersController.GetUser (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 16.3157ms. (50a9e262)
+2019-02-20T16:40:25.7311891+10:00 0HLKMVNJJ9P8F:00000004 [INF] Executing ObjectResult, writing value of type '"BasketballSupercoach.API.Models.User"'. (8a1b66c8)
+2019-02-20T16:40:25.7322431+10:00 0HLKMVNJJ9P8F:00000004 [INF] Executed action "BasketballSupercoach.API.Controllers.UsersController.GetUser (BasketballSupercoach.API)" in 19.5357ms (afa2e885)
+2019-02-20T16:40:25.7324551+10:00 0HLKMVNJJ9P8F:00000004 [INF] Request finished in 23.6064ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-20T16:40:25.7656190+10:00 0HLKMVNJJ9P8F:00000005 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/teamsalary/9   (ca22a1cb)
+2019-02-20T16:40:25.7656889+10:00 0HLKMVNJJ9P8F:00000005 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:40:25.7657967+10:00 0HLKMVNJJ9P8F:00000005 [INF] Request finished in 0.2254ms 204  (791a596a)
+2019-02-20T16:40:25.7689105+10:00 0HLKMVNJJ9P8F:00000006 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/teamdetail/9   (ca22a1cb)
+2019-02-20T16:40:25.7689732+10:00 0HLKMVNJJ9P8F:00000006 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:40:25.7690684+10:00 0HLKMVNJJ9P8F:00000006 [INF] Request finished in 0.2115ms 204  (791a596a)
+2019-02-20T16:40:25.7691446+10:00 0HLKMVNJJ9P8G:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/teamrank/9   (ca22a1cb)
+2019-02-20T16:40:25.7691754+10:00 0HLKMVNJJ9P8G:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:40:25.7692294+10:00 0HLKMVNJJ9P8G:00000001 [INF] Request finished in 0.0919ms 204  (791a596a)
+2019-02-20T16:40:25.7768400+10:00 0HLKMVNJJ9P8G:00000002 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/teamrank/totalrank/9   (ca22a1cb)
+2019-02-20T16:40:25.7770169+10:00 0HLKMVNJJ9P8F:00000007 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/teamrank/score/9   (ca22a1cb)
+2019-02-20T16:40:25.7771614+10:00 0HLKMVNJJ9P8G:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:40:25.7772510+10:00 0HLKMVNJJ9P8F:00000007 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:40:25.7776552+10:00 0HLKMVNJJ9P8G:00000002 [INF] Request finished in 1.0354ms 204  (791a596a)
+2019-02-20T16:40:25.7783219+10:00 0HLKMVNJJ9P8H:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/teamrank/totalscore/9   (ca22a1cb)
+2019-02-20T16:40:25.7783590+10:00 0HLKMVNJJ9P8H:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:40:25.7784147+10:00 0HLKMVNJJ9P8H:00000001 [INF] Request finished in 0.3315ms 204  (791a596a)
+2019-02-20T16:40:25.7789101+10:00 0HLKMVNJJ9P8F:00000007 [INF] Request finished in 0.8641ms 204  (791a596a)
+2019-02-20T16:40:25.7833290+10:00 0HLKMVNJJ9P8F:00000008 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/teamrank/getround/   (ca22a1cb)
+2019-02-20T16:40:25.7833918+10:00 0HLKMVNJJ9P8F:00000008 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:40:25.7834830+10:00 0HLKMVNJJ9P8F:00000008 [INF] Request finished in 0.234ms 204  (791a596a)
+2019-02-20T16:40:25.7838292+10:00 0HLKMVNJJ9P8H:00000002 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/runscores/getstatus/   (ca22a1cb)
+2019-02-20T16:40:25.7838892+10:00 0HLKMVNJJ9P8H:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:40:25.7839709+10:00 0HLKMVNJJ9P8H:00000002 [INF] Request finished in 0.253ms 204  (791a596a)
+2019-02-20T16:40:25.8112498+10:00 0HLKMVNJJ9P8H:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/teamsalary/9   (ca22a1cb)
+2019-02-20T16:40:25.8113703+10:00 0HLKMVNJJ9P8H:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:40:25.8116584+10:00 0HLKMVNJJ9P8H:00000003 [INF] Successfully validated the token. (60169667)
+2019-02-20T16:40:25.8181999+10:00 0HLKMVNJJ9P8F:00000009 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/teamdetail/9   (ca22a1cb)
+2019-02-20T16:40:25.8182714+10:00 0HLKMVNJJ9P8F:00000009 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:40:25.8186120+10:00 0HLKMVNJJ9P8F:00000009 [INF] Successfully validated the token. (60169667)
+2019-02-20T16:40:25.8190253+10:00 0HLKMVNJJ9P8F:00000009 [INF] Route matched with "{action = \"GetPlayerCardsForUser\", controller = \"TeamDetail\"}". Executing action "BasketballSupercoach.API.Controllers.TeamDetailController.GetPlayerCardsForUser (BasketballSupercoach.API)" (a44c0341)
+2019-02-20T16:40:25.8191359+10:00 0HLKMVNJJ9P8F:00000009 [INF] Authorization was successful. (0d575a54)
+2019-02-20T16:40:25.8195413+10:00 0HLKMVNJJ9P8F:00000009 [INF] Executing action method "BasketballSupercoach.API.Controllers.TeamDetailController.GetPlayerCardsForUser (BasketballSupercoach.API)" with arguments (["9"]) - Validation state: Valid (4e3479ed)
+2019-02-20T16:40:25.8201492+10:00 0HLKMVNJJ9P8F:00000009 [INF] Entity Framework Core "2.2.1-servicing-10028" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-20T16:40:25.8215194+10:00 0HLKMVNJJ9P8H:00000003 [INF] Route matched with "{action = \"GetTeamSalary\", controller = \"TeamSalary\"}". Executing action "BasketballSupercoach.API.Controllers.TeamSalaryController.GetTeamSalary (BasketballSupercoach.API)" (a44c0341)
+2019-02-20T16:40:25.8215971+10:00 0HLKMVNJJ9P8F:00000009 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-20T16:40:25.8219054+10:00 0HLKMVNJJ9P8H:00000003 [INF] Executing action method "BasketballSupercoach.API.Controllers.TeamSalaryController.GetTeamSalary (BasketballSupercoach.API)" with arguments (["9"]) - Validation state: Valid (4e3479ed)
+2019-02-20T16:40:25.8223953+10:00 0HLKMVNJJ9P8F:00000009 [INF] Executed DbCommand ("1"ms) [Parameters=["@__userId_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"Id\", \"x\".\"Active\", \"x\".\"Captain\", \"x\".\"Emergency\", \"x\".\"PlayerId\", \"x\".\"Position\", \"x\".\"SixthMan\", \"x\".\"UserId\"
+FROM \"TeamDetails\" AS \"x\"
+WHERE \"x\".\"UserId\" = @__userId_0" (0723d8ff)
+2019-02-20T16:40:25.8227029+10:00 0HLKMVNJJ9P8G:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/teamrank/9   (ca22a1cb)
+2019-02-20T16:40:25.8227439+10:00 0HLKMVNJJ9P8F:00000009 [INF] Executed action method "BasketballSupercoach.API.Controllers.TeamDetailController.GetPlayerCardsForUser (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 3.1327ms. (50a9e262)
+2019-02-20T16:40:25.8243984+10:00 0HLKMVNJJ9P8F:00000009 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[BasketballSupercoach.API.Dtos.PlayerCardDto, BasketballSupercoach.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-02-20T16:40:25.8227582+10:00 0HLKMVNJJ9P8G:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:40:25.8256668+10:00 0HLKMVNJJ9P8F:00000009 [INF] Executed action "BasketballSupercoach.API.Controllers.TeamDetailController.GetPlayerCardsForUser (BasketballSupercoach.API)" in 6.5608ms (afa2e885)
+2019-02-20T16:40:25.8257820+10:00 0HLKMVNJJ9P8F:00000009 [INF] Request finished in 7.7107ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-20T16:40:25.8259075+10:00 0HLKMVNJJ9P8I:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/teamrank/score/9   (ca22a1cb)
+2019-02-20T16:40:25.8259368+10:00 0HLKMVNJJ9P8G:00000003 [INF] Successfully validated the token. (60169667)
+2019-02-20T16:40:25.8259478+10:00 0HLKMVNJJ9P8I:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:40:25.8261199+10:00 0HLKMVNJJ9P8I:00000001 [INF] Successfully validated the token. (60169667)
+2019-02-20T16:40:25.8262060+10:00 0HLKMVNJJ9P8G:00000003 [INF] Route matched with "{action = \"GetRoundRank\", controller = \"TeamRank\"}". Executing action "BasketballSupercoach.API.Controllers.TeamRankController.GetRoundRank (BasketballSupercoach.API)" (a44c0341)
+2019-02-20T16:40:25.8262837+10:00 0HLKMVNJJ9P8G:00000003 [INF] Authorization was successful. (0d575a54)
+2019-02-20T16:40:25.8263066+10:00 0HLKMVNJJ9P8I:00000001 [INF] Route matched with "{action = \"GetRoundScore\", controller = \"TeamRank\"}". Executing action "BasketballSupercoach.API.Controllers.TeamRankController.GetRoundScore (BasketballSupercoach.API)" (a44c0341)
+2019-02-20T16:40:25.8263635+10:00 0HLKMVNJJ9P8I:00000001 [INF] Authorization was successful. (0d575a54)
+2019-02-20T16:40:25.8265565+10:00 0HLKMVNJJ9P8I:00000001 [INF] Executing action method "BasketballSupercoach.API.Controllers.TeamRankController.GetRoundScore (BasketballSupercoach.API)" with arguments (["9"]) - Validation state: Valid (4e3479ed)
+2019-02-20T16:40:25.8265565+10:00 0HLKMVNJJ9P8G:00000003 [INF] Executing action method "BasketballSupercoach.API.Controllers.TeamRankController.GetRoundRank (BasketballSupercoach.API)" with arguments (["9"]) - Validation state: Valid (4e3479ed)
+2019-02-20T16:40:25.8268798+10:00 0HLKMVNJJ9P8G:00000003 [INF] Entity Framework Core "2.2.1-servicing-10028" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-20T16:40:25.8268798+10:00 0HLKMVNJJ9P8I:00000001 [INF] Entity Framework Core "2.2.1-servicing-10028" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-20T16:40:25.8281296+10:00 0HLKMVNJJ9P8G:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-20T16:40:25.8281241+10:00 0HLKMVNJJ9P8I:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-20T16:40:25.8286116+10:00 0HLKMVNJJ9P8H:00000003 [INF] Entity Framework Core "2.2.1-servicing-10028" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-20T16:40:25.8288998+10:00 0HLKMVNJJ9P8I:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"r\".\"Id\", \"r\".\"EndDate\", \"r\".\"RoundNumber\", \"r\".\"StartDate\"
+FROM (
+    SELECT * FROM Rounds where CAST(startDate AS INT) <= @p0 and CAST(endDate AS INT) >= @p0
+) AS \"r\"
+LIMIT 1" (0723d8ff)
+2019-02-20T16:40:25.8302183+10:00 0HLKMVNJJ9P8I:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-20T16:40:25.8304310+10:00 0HLKMVNJJ9P8G:00000003 [INF] Executed DbCommand ("2"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"r\".\"Id\", \"r\".\"EndDate\", \"r\".\"RoundNumber\", \"r\".\"StartDate\"
+FROM (
+    SELECT * FROM Rounds where CAST(startDate AS INT) <= @p0 and CAST(endDate AS INT) >= @p0
+) AS \"r\"
+LIMIT 1" (0723d8ff)
+2019-02-20T16:40:25.8309711+10:00 0HLKMVNJJ9P8I:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?', @p1='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"Id\", \"t\".\"RoundId\", \"t\".\"Total\", \"t\".\"UserId\"
+FROM (
+    SELECT * FROM TeamScores where RoundId = @p0 and UserId = @p1
+) AS \"t\"
+LIMIT 1" (0723d8ff)
+2019-02-20T16:40:25.8313259+10:00 0HLKMVNJJ9P8I:00000001 [INF] Executed action method "BasketballSupercoach.API.Controllers.TeamRankController.GetRoundScore (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 4.7015ms. (50a9e262)
+2019-02-20T16:40:25.8314321+10:00 0HLKMVNJJ9P8I:00000001 [INF] Executing ObjectResult, writing value of type '"System.Decimal"'. (8a1b66c8)
+2019-02-20T16:40:25.8315063+10:00 0HLKMVNJJ9P8G:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-20T16:40:25.8315644+10:00 0HLKMVNJJ9P8I:00000001 [INF] Executed action "BasketballSupercoach.API.Controllers.TeamRankController.GetRoundScore (BasketballSupercoach.API)" in 5.2072ms (afa2e885)
+2019-02-20T16:40:25.8316457+10:00 0HLKMVNJJ9P8I:00000001 [INF] Request finished in 5.7472ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-20T16:40:25.8321956+10:00 0HLKMVNJJ9P8G:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""select * from TeamScores where RoundId = @p0 order by Total desc" (0723d8ff)
+2019-02-20T16:40:25.8327182+10:00 0HLKMVNJJ9P8G:00000003 [INF] Executed action method "BasketballSupercoach.API.Controllers.TeamRankController.GetRoundRank (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 6.0958ms. (50a9e262)
+2019-02-20T16:40:25.8328197+10:00 0HLKMVNJJ9P8G:00000003 [INF] Executing ObjectResult, writing value of type '"System.Int32"'. (8a1b66c8)
+2019-02-20T16:40:25.8329709+10:00 0HLKMVNJJ9P8G:00000003 [INF] Executed action "BasketballSupercoach.API.Controllers.TeamRankController.GetRoundRank (BasketballSupercoach.API)" in 6.712ms (afa2e885)
+2019-02-20T16:40:25.8330538+10:00 0HLKMVNJJ9P8G:00000003 [INF] Request finished in 10.3671ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-20T16:40:25.8809063+10:00 0HLKMVNJJ9P8H:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-20T16:40:25.8826594+10:00 0HLKMVNJJ9P8H:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__userId_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"ts\".\"Id\", \"ts\".\"AvailableSalary\", \"ts\".\"UserId\"
+FROM \"TeamSalary\" AS \"ts\"
+WHERE \"ts\".\"UserId\" = @__userId_0
+LIMIT 1" (0723d8ff)
+2019-02-20T16:40:25.8856221+10:00 0HLKMVNJJ9P8H:00000003 [INF] Executed action method "BasketballSupercoach.API.Controllers.TeamSalaryController.GetTeamSalary (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 63.6001ms. (50a9e262)
+2019-02-20T16:40:25.8857614+10:00 0HLKMVNJJ9P8H:00000003 [INF] Executing ObjectResult, writing value of type '"BasketballSupercoach.API.Models.TeamSalary"'. (8a1b66c8)
+2019-02-20T16:40:25.8879914+10:00 0HLKMVNJJ9P8H:00000003 [INF] Executed action "BasketballSupercoach.API.Controllers.TeamSalaryController.GetTeamSalary (BasketballSupercoach.API)" in 66.378ms (afa2e885)
+2019-02-20T16:40:25.8882207+10:00 0HLKMVNJJ9P8H:00000003 [INF] Request finished in 77.1327ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-20T16:40:25.9331271+10:00 0HLKMVNJJ9P8J:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/teamrank/totalrank/9   (ca22a1cb)
+2019-02-20T16:40:25.9332834+10:00 0HLKMVNJJ9P8J:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:40:25.9335566+10:00 0HLKMVNJJ9P8J:00000001 [INF] Successfully validated the token. (60169667)
+2019-02-20T16:40:25.9337903+10:00 0HLKMVNJJ9P8J:00000001 [INF] Route matched with "{action = \"GetTotalRank\", controller = \"TeamRank\"}". Executing action "BasketballSupercoach.API.Controllers.TeamRankController.GetTotalRank (BasketballSupercoach.API)" (a44c0341)
+2019-02-20T16:40:25.9338712+10:00 0HLKMVNJJ9P8J:00000001 [INF] Authorization was successful. (0d575a54)
+2019-02-20T16:40:25.9341831+10:00 0HLKMVNJJ9P8J:00000001 [INF] Executing action method "BasketballSupercoach.API.Controllers.TeamRankController.GetTotalRank (BasketballSupercoach.API)" with arguments (["9"]) - Validation state: Valid (4e3479ed)
+2019-02-20T16:40:25.9345995+10:00 0HLKMVNJJ9P8J:00000001 [INF] Entity Framework Core "2.2.1-servicing-10028" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-20T16:40:25.9353740+10:00 0HLKMVNJJ9P8F:0000000A [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/runscores/getstatus/   (ca22a1cb)
+2019-02-20T16:40:25.9356255+10:00 0HLKMVNJJ9P8F:0000000A [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:40:25.9357045+10:00 0HLKMVNJJ9P8K:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/teamrank/getround/   (ca22a1cb)
+2019-02-20T16:40:25.9357412+10:00 0HLKMVNJJ9P8K:00000001 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:40:25.9360033+10:00 0HLKMVNJJ9P8K:00000001 [INF] Successfully validated the token. (60169667)
+2019-02-20T16:40:25.9360400+10:00 0HLKMVNJJ9P8F:0000000A [INF] Successfully validated the token. (60169667)
+2019-02-20T16:40:25.9362366+10:00 0HLKMVNJJ9P8K:00000001 [INF] Route matched with "{action = \"GetCurrentRound\", controller = \"TeamRank\"}". Executing action "BasketballSupercoach.API.Controllers.TeamRankController.GetCurrentRound (BasketballSupercoach.API)" (a44c0341)
+2019-02-20T16:40:25.9362366+10:00 0HLKMVNJJ9P8F:0000000A [INF] Route matched with "{action = \"GetCompetitionStatus\", controller = \"RunScores\"}". Executing action "BasketballSupercoach.API.Controllers.RunScoresController.GetCompetitionStatus (BasketballSupercoach.API)" (a44c0341)
+2019-02-20T16:40:25.9363444+10:00 0HLKMVNJJ9P8F:0000000A [INF] Authorization was successful. (0d575a54)
+2019-02-20T16:40:25.9364941+10:00 0HLKMVNJJ9P8K:00000001 [INF] Authorization was successful. (0d575a54)
+2019-02-20T16:40:25.9374091+10:00 0HLKMVNJJ9P8F:0000000A [INF] Executing action method "BasketballSupercoach.API.Controllers.RunScoresController.GetCompetitionStatus (BasketballSupercoach.API)" - Validation state: Valid (dad538d7)
+2019-02-20T16:40:25.9382322+10:00 0HLKMVNJJ9P8F:0000000A [INF] Entity Framework Core "2.2.1-servicing-10028" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-20T16:40:25.9422736+10:00 0HLKMVNJJ9P8J:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-20T16:40:25.9427485+10:00 0HLKMVNJJ9P8K:00000001 [INF] Executing action method "BasketballSupercoach.API.Controllers.TeamRankController.GetCurrentRound (BasketballSupercoach.API)" - Validation state: Valid (dad538d7)
+2019-02-20T16:40:25.9436107+10:00 0HLKMVNJJ9P8K:00000001 [INF] Entity Framework Core "2.2.1-servicing-10028" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-20T16:40:25.9437654+10:00 0HLKMVNJJ9P8F:0000000A [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-20T16:40:25.9447681+10:00 0HLKMVNJJ9P8F:0000000A [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"l\".\"Id\", \"l\".\"Locked\"
+FROM \"Lockouts\" AS \"l\"" (0723d8ff)
+2019-02-20T16:40:25.9451155+10:00 0HLKMVNJJ9P8K:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-20T16:40:25.9457412+10:00 0HLKMVNJJ9P8J:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"Id\", \"t\".\"RoundId\", \"t\".\"Total\", \"t\".\"UserId\"
+FROM \"TeamScores\" AS \"t\"" (0723d8ff)
+2019-02-20T16:40:25.9457893+10:00 0HLKMVNJJ9P8K:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"r\".\"Id\", \"r\".\"EndDate\", \"r\".\"RoundNumber\", \"r\".\"StartDate\"
+FROM (
+    SELECT * FROM Rounds where CAST(startDate AS INT) <= @p0 and CAST(endDate AS INT) >= @p0
+) AS \"r\"
+LIMIT 1" (0723d8ff)
+2019-02-20T16:40:25.9460495+10:00 0HLKMVNJJ9P8K:00000001 [INF] Executed action method "BasketballSupercoach.API.Controllers.TeamRankController.GetCurrentRound (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 3.2208ms. (50a9e262)
+2019-02-20T16:40:25.9461474+10:00 0HLKMVNJJ9P8K:00000001 [INF] Executing ObjectResult, writing value of type '"System.Int32"'. (8a1b66c8)
+2019-02-20T16:40:25.9462654+10:00 0HLKMVNJJ9P8K:00000001 [INF] Executed action "BasketballSupercoach.API.Controllers.TeamRankController.GetCurrentRound (BasketballSupercoach.API)" in 9.9759ms (afa2e885)
+2019-02-20T16:40:25.9463538+10:00 0HLKMVNJJ9P8K:00000001 [INF] Request finished in 10.6651ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-20T16:40:25.9464850+10:00 0HLKMVNJJ9P8I:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/teamrank/totalscore/9   (ca22a1cb)
+2019-02-20T16:40:25.9464944+10:00 0HLKMVNJJ9P8F:0000000A [INF] Executed action method "BasketballSupercoach.API.Controllers.RunScoresController.GetCompetitionStatus (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 7.7115ms. (50a9e262)
+2019-02-20T16:40:25.9465308+10:00 0HLKMVNJJ9P8I:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:40:25.9466235+10:00 0HLKMVNJJ9P8F:0000000A [INF] Executing ObjectResult, writing value of type '"System.Int32"'. (8a1b66c8)
+2019-02-20T16:40:25.9468221+10:00 0HLKMVNJJ9P8I:00000002 [INF] Successfully validated the token. (60169667)
+2019-02-20T16:40:25.9470696+10:00 0HLKMVNJJ9P8I:00000002 [INF] Route matched with "{action = \"GetTotalScore\", controller = \"TeamRank\"}". Executing action "BasketballSupercoach.API.Controllers.TeamRankController.GetTotalScore (BasketballSupercoach.API)" (a44c0341)
+2019-02-20T16:40:25.9471474+10:00 0HLKMVNJJ9P8I:00000002 [INF] Authorization was successful. (0d575a54)
+2019-02-20T16:40:25.9472587+10:00 0HLKMVNJJ9P8F:0000000A [INF] Executed action "BasketballSupercoach.API.Controllers.RunScoresController.GetCompetitionStatus (BasketballSupercoach.API)" in 10.5001ms (afa2e885)
+2019-02-20T16:40:25.9474123+10:00 0HLKMVNJJ9P8I:00000002 [INF] Executing action method "BasketballSupercoach.API.Controllers.TeamRankController.GetTotalScore (BasketballSupercoach.API)" with arguments (["9"]) - Validation state: Valid (4e3479ed)
+2019-02-20T16:40:25.9474675+10:00 0HLKMVNJJ9P8F:0000000A [INF] Request finished in 12.0479ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-20T16:40:25.9477656+10:00 0HLKMVNJJ9P8I:00000002 [INF] Entity Framework Core "2.2.1-servicing-10028" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-20T16:40:25.9491101+10:00 0HLKMVNJJ9P8I:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-20T16:40:25.9501222+10:00 0HLKMVNJJ9P8I:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM TeamScores where UserId = @p0" (0723d8ff)
+2019-02-20T16:40:25.9504436+10:00 0HLKMVNJJ9P8J:00000001 [INF] Executed action method "BasketballSupercoach.API.Controllers.TeamRankController.GetTotalRank (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 16.0899ms. (50a9e262)
+2019-02-20T16:40:25.9506003+10:00 0HLKMVNJJ9P8I:00000002 [INF] Executed action method "BasketballSupercoach.API.Controllers.TeamRankController.GetTotalScore (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 3.1292ms. (50a9e262)
+2019-02-20T16:40:25.9506433+10:00 0HLKMVNJJ9P8J:00000001 [INF] Executing ObjectResult, writing value of type '"System.Int32"'. (8a1b66c8)
+2019-02-20T16:40:25.9506950+10:00 0HLKMVNJJ9P8I:00000002 [INF] Executing ObjectResult, writing value of type '"System.Decimal"'. (8a1b66c8)
+2019-02-20T16:40:25.9508052+10:00 0HLKMVNJJ9P8I:00000002 [INF] Executed action "BasketballSupercoach.API.Controllers.TeamRankController.GetTotalScore (BasketballSupercoach.API)" in 3.683ms (afa2e885)
+2019-02-20T16:40:25.9509003+10:00 0HLKMVNJJ9P8I:00000002 [INF] Request finished in 4.424ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-20T16:40:25.9509354+10:00 0HLKMVNJJ9P8J:00000001 [INF] Executed action "BasketballSupercoach.API.Controllers.TeamRankController.GetTotalRank (BasketballSupercoach.API)" in 17.0973ms (afa2e885)
+2019-02-20T16:40:25.9512421+10:00 0HLKMVNJJ9P8J:00000001 [INF] Request finished in 18.1592ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-20T16:40:30.5154362+10:00 0HLKMVNJJ9P8J:00000002 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-20T16:40:30.5155258+10:00 0HLKMVNJJ9P8J:00000002 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:40:30.5156596+10:00 0HLKMVNJJ9P8J:00000002 [INF] Request finished in 0.311ms 204  (791a596a)
+2019-02-20T16:40:30.5472232+10:00 0HLKMVNJJ9P8J:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-20T16:40:30.5473159+10:00 0HLKMVNJJ9P8J:00000003 [INF] CORS policy execution successful. (5409d6ef)
+2019-02-20T16:40:30.5476530+10:00 0HLKMVNJJ9P8J:00000003 [INF] Successfully validated the token. (60169667)
+2019-02-20T16:40:30.5580482+10:00 0HLKMVNJJ9P8J:00000003 [INF] Route matched with "{action = \"GetScoringSystem\", controller = \"ScoringSystem\"}". Executing action "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" (a44c0341)
+2019-02-20T16:40:30.5584410+10:00 0HLKMVNJJ9P8J:00000003 [INF] Authorization was successful. (0d575a54)
+2019-02-20T16:40:30.5589020+10:00 0HLKMVNJJ9P8J:00000003 [INF] Executing action method "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" - Validation state: Valid (dad538d7)
+2019-02-20T16:40:30.5634055+10:00 0HLKMVNJJ9P8J:00000003 [INF] Entity Framework Core "2.2.1-servicing-10028" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-20T16:40:30.5685665+10:00 0HLKMVNJJ9P8J:00000003 [WRN] Query: '"(from ScoringSystem <generated>_1 in DbSet<ScoringSystem> select [<generated>_1]).FirstOrDefault()"' uses First/FirstOrDefault/Last/LastOrDefault operation without OrderBy and filter which may lead to unpredictable results. (6af4db4b)
+2019-02-20T16:40:30.5861202+10:00 0HLKMVNJJ9P8J:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-20T16:40:30.5901701+10:00 0HLKMVNJJ9P8J:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"s\".\"Id\", \"s\".\"Assists\", \"s\".\"Blocks\", \"s\".\"DRebounds\", \"s\".\"DoubleDouble\", \"s\".\"MadeThrees\", \"s\".\"Minutes\", \"s\".\"ORebounds\", \"s\".\"Points\", \"s\".\"QuadDouble\", \"s\".\"Steals\", \"s\".\"TripleDouble\", \"s\".\"Turnovers\"
+FROM \"ScoringSystems\" AS \"s\"
+LIMIT 1" (0723d8ff)
+2019-02-20T16:40:30.5978074+10:00 0HLKMVNJJ9P8J:00000003 [INF] Executed action method "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 38.7868ms. (50a9e262)
+2019-02-20T16:40:30.5980194+10:00 0HLKMVNJJ9P8J:00000003 [INF] Executing ObjectResult, writing value of type '"BasketballSupercoach.API.Models.ScoringSystem"'. (8a1b66c8)
+2019-02-20T16:40:30.6045269+10:00 0HLKMVNJJ9P8J:00000003 [INF] Executed action "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" in 46.1617ms (afa2e885)
+2019-02-20T16:40:30.6047120+10:00 0HLKMVNJJ9P8J:00000003 [INF] Request finished in 57.5078ms 200 application/json; charset=utf-8 (791a596a)

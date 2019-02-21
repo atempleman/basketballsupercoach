@@ -1,0 +1,87 @@
+<div class="page-content d-flex align-items-stretch">
+    <div class="content-inner">
+        <header class="page-header">
+          <div class="container-fluid">
+            <h2 class="no-margin-bottom">Dashboard       </h2>
+            <h4 *ngIf="this.round !== 0" class="no-margin-bottom">Round #{{this.round}}</h4>
+            <h4 *ngIf="this.round === 0" class="no-margin-bottom">Compeititon Status: Preseason</h4>
+            <h4 *ngIf="this.currentState === 0 && this.round !== 0" class="no-margin-bottom">Compeititon Status: Open</h4>
+            <h4 *ngIf="this.currentState === 1 && this.round !== 0" class="no-margin-bottom">Compeititon Status: Lockout</h4>
+          </div>
+        </header>
+        <!-- Dashboard Counts Section-->
+        <section class="dashboard-counts no-padding-bottom">
+            <div class="container-fluid">
+                <div class="row bg-white has-shadow">
+                    <div class="col-xl-4 col-sm-8">
+                        <div class="item d-flex align-items-center">
+                            <div class="title"><span><strong>Available Salary</strong></span>
+                              <div class="number" *ngIf="!teamSelected()">${{ this.availableSalary | number : 0 }}</div>
+                              <div><br></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-sm-8">
+                        <div class="item d-flex align-items-center">
+                            <div class="title"><span><strong>Trades Remaining</strong></span>
+                              <!-- <div class="number" *ngIf="!teamSelected()">30</div> -->
+                                <div class="number" *ngIf="this.round === 0">N/A</div>
+                              <div><br></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-sm-8">
+                        <div class="item d-flex align-items-center">
+                            <div class="title"><span><strong>Round # Score</strong></span>
+                              <div class="number" *ngIf="this.round === 0">N/A</div>
+                              <div class="number" *ngIf="this.round !== 0">{{this.roundScore | number : 0}}</div>
+                              <div><br></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-sm-8">
+                        <div class="item d-flex align-items-center">
+                            <div class="title"><span><strong>Round Rank</strong></span>
+                                <div class="number" *ngIf="this.round === 0">N/A</div>
+                                <div class="number" *ngIf="this.round !== 0">{{this.roundRank | number : 0}}</div>
+                              <div><br></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-sm-8">
+                        <div class="item d-flex align-items-center">
+                            <div class="title"><span><strong>Overall # Score</strong></span>
+                                <div class="number" *ngIf="this.round === 0">N/A</div>
+                                <div class="number" *ngIf="this.round !== 0">{{this.totalScore | number : 0}}</div>
+                              <div><br></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-sm-8">
+                        <div class="item d-flex align-items-center">
+                            <div class="title"><span><strong>Overall Rank</strong></span>
+                                <div class="number" *ngIf="this.round === 0">N/A</div>
+                                <div class="number" *ngIf="this.round !== 0">{{this.totalRank | number : 0}}</div>
+                              <div><br></div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </section>
+        <section class="playercard-displays no-padding-bottom">
+            <div class="container-fluid">
+              <div class="row bg-white has-shadow">
+                  <div *ngIf="this.loaded == 0">Loading your team...</div>
+                  <div *ngIf="this.loaded == 1">
+                    <div class="row card-group">
+                      <div class="indcard col-5" *ngFor="let pc of this.playerCards">
+                        <app-dashboardcard [playercard]="pc"></app-dashboardcard>
+                      </div>
+                    </div>      
+                  </div>
+              </div>
+            </div>
+        </section>
+    </div>
+</div>

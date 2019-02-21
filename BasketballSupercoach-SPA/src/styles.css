@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+/* @import '../node_modules/bootswatch/dist/darkly/bootstrap.min.css'; */
+@import '../node_modules/font-awesome/css/font-awesome.min.css';
+@import '~primeng/resources/primeng.min.css';
+@import '../node_modules/alertifyjs/build/css/alertify.min.css';
+@import '../node_modules/alertifyjs/build//css/themes/bootstrap.min.css';
+@import '../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css';
+
+img {
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+#router-div {
+    padding: 5px;
+ }
+
+ #image-display {
+    position: absolute;
+    top: 10px;
+    left: 10px; 
+    padding: 5px;
+ }
